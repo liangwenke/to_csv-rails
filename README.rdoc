@@ -1,0 +1,36 @@
+== to_csv plugin
+
+Introduction goes here.
+
+
+== Usage
+
+  @posts.to_csv
+  @posts.to_csv(:only => [:title, :body])
+  @posts.to_csv(:except => [:id])
+  @posts.to_csv(:header => false)
+
+
+== Example
+
+  class PostsController < ApplicationController
+    def index
+      @posts = Post.all
+      
+      respond_to do |format|
+        format.csv { send_data(@posts.to_csv) }
+        #format.csv {
+			  #  filename = "posts-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv" 
+        #  send_data(@posts.to_csv, :type => "text/csv; charset=utf-8; header=present", :filename => filename)
+			  #}
+      end
+    end
+  end
+
+
+== Install
+
+  ./script/plugin install git@github.com:wenke/to_csv.git
+
+
+Copyright (c) 2010 Wenke Liang, released under the MIT license
