@@ -5,6 +5,12 @@ This simple plugin gives you the ability to call to_csv to a collection of activ
 
 == Usage
 
+  @posts = Post.all
+  
+  #
+  #  default are export header and all fileds
+  #
+  
   @posts.to_csv
   @posts.to_csv(:only => [:title, :body])
   @posts.to_csv(:except => [:id])

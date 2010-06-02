@@ -36,4 +36,5 @@ class Array
     end
     data.join("\n")
   end
+  
 end
