@@ -1,6 +1,6 @@
 == to_csv plugin
 
-Introduction goes here.
+This simple plugin gives you the ability to call to_csv to a collection of activerecords. The builder options are the same as to_json / to_xml, except for the :include.
 
 
 == Usage
@@ -32,5 +32,7 @@ Introduction goes here.
 
   ./script/plugin install git@github.com:wenke/to_csv.git
 
+
+== Note
 
 Copyright (c) 2010 Wenke Liang, released under the MIT license
