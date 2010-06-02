@@ -11,21 +11,29 @@ class Array
 #        #format.csv {
 #			  #  filename = "posts-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv" 
 #        #  send_data(@posts.to_csv, :type => "text/csv; charset=utf-8; header=present", :filename => filename)
-#			}
+#			  #}
 #      end
 #    end
 #  end
   
-  def to_csv
-    if self.any?
-      #columns = self.first.class.content_columns
-      columns = self.first.class.columns
-      header = columns.collect(&:human_name)
-      contents = []
-      self.each do |obj|
-        contents << columns.collect{ |column| obj.send(column.name) }.join(', ')
-      end
-      header.join(', ') + "\n" + contents.join("\n")
+  def to_csv(options = {})
+    return '' if self.empty?
+
+    #columns = self.first.class.content_columns # not include the ID column
+    if options[:only]
+      columns = Array(options[:only].map(&:to_sym))
+    else
+      columns = self.first.class.columns - Array(options[:except].map(&:to_sym))
     end
+    
+    return '' if columns.empty?
+    
+    data = []
+    # header
+    data << columns.collect(&:human_name).join(', ') unless options[:header] == false
+    self.each do |obj|
+      data << columns.collect{ |column| obj.send(column.name) }.join(', ')
+    end
+    data.join("\n")
   end
 end
