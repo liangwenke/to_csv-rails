@@ -21,9 +21,9 @@ class Array
 
     #columns = self.first.class.content_columns # not include the ID column
     if options[:only]
-      columns = Array(options[:only].map(&:to_sym))
+      columns = Array(options[:only]).map(&:to_sym)
     else
-      columns = self.first.class.columns - Array(options[:except].map(&:to_sym))
+      columns = self.first.class.columns - Array(options[:except]).map(&:to_sym)
     end
     
     return '' if columns.empty?
