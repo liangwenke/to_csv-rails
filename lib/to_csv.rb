@@ -23,16 +23,16 @@ class Array
     if options[:only]
       columns = Array(options[:only]).map(&:to_sym)
     else
-      columns = self.first.class.columns - Array(options[:except]).map(&:to_sym)
+      columns = self.first.class.column_names.map(&:to_sym) - Array(options[:except]).map(&:to_sym)
     end
     
     return '' if columns.empty?
     
     data = []
     # header
-    data << columns.collect(&:human_name).join(', ') unless options[:header] == false
+    data << columns.map(&:to_s).map(&:humanize).join(', ') unless options[:header] == false
     self.each do |obj|
-      data << columns.collect{ |column| obj.send(column.name) }.join(', ')
+      data << columns.map{ |column| obj.send(column) }.join(', ')
     end
     data.join("\n")
   end
