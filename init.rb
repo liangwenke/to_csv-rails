@@ -1,1 +1,1 @@
-require 'to_csv'
+require 'to_csv-rails'

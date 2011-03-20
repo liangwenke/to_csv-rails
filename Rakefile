@@ -6,7 +6,7 @@ require 'rake/gempackagetask'
 desc 'Default: run unit tests.'
 task :default => :test
 
-desc 'Test the to-csv-rails plugin.'
+desc 'Test the to_csv-rails plugin.'
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.libs << 'test'
