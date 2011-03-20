@@ -36,13 +36,12 @@ This simple plugin gives you the ability to call to_csv to a collection of activ
 
 == Install
 
-  git clone http://github.com/wenke/to_csv-rails.git OR
+  gem install to_csv-rails
+  
+  gem 'to_csv-rails'
+  bundle install
 
-  on rails 2.x.x  
-  ./script/plugin install git://github.com/wenke/to_csv-rails.git
-
-  on rails 3
-  rails plugin install git://github.com/wenke/to_csv-rails.git
+  git clone http://github.com/wenke/to_csv-rails.git
 
 == Note
 
