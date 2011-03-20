@@ -1,21 +1,19 @@
 # encoding: utf-8
 
-require File.expand_path('../version', __FILE__)
+version = File.read(File.expand_path("../VERSION",__FILE__)).strip
 
 Gem::Specification.new do |s|
-  s.platform    = Gem::Platform::RUBY
-  s.name        = "to_csv"
-  s.version     = ToCsv::VERSION
+  s.name = 'to-csv-rails'
+  s.version = version
+  s.author = "LiangWenKe"
+  s.email = "liangwenke8@gmail.com"
+  s.homepage = "http://github.com/wenke/to-csv-rails"
   s.summary     = "Export data to csv on Rails"
   s.description = "This simple plugin gives you the ability to call to_csv to a collection of activerecords. The builder options are the same as to_json / to_xml, except for the :include."
-
-  s.required_ruby_version     = '>= 1.8.7'
-  s.required_rubygems_version = ">= 1.3.6"
   
-  s.authors     = ["LiangWenKe"]
-  s.email       = ["liangwenke8@gmail.com"]
-  s.homepage    = "http://www.liangwenke.com"
-  s.rubyforge_project = "to_csv"
+  s.files        = Dir["{lib,test}/**/*", "[A-Z]*", "init.rb"] - ["Gemfile.lock"]
+  s.require_path = "lib"
 
-  s.require_path = 'lib'
+  s.rubyforge_project = s.name
+  s.required_rubygems_version = ">= 1.3.4"
 end

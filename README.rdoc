@@ -1,4 +1,4 @@
-== to_csv plugin
+== to-csv-rails
 
 This simple plugin gives you the ability to call to_csv to a collection of activerecords. The builder options are the same as to_json / to_xml, except for the :include.
 
@@ -36,13 +36,13 @@ This simple plugin gives you the ability to call to_csv to a collection of activ
 
 == Install
 
-  git clone http://github.com/wenke/to_csv.git OR
+  git clone http://github.com/wenke/to-csv-rails.git OR
 
   on rails 2.x.x  
-  ./script/plugin install git://github.com/wenke/to_csv.git
+  ./script/plugin install git://github.com/wenke/to-csv-rails.git
 
   on rails 3
-  rails plugin install git://github.com/wenke/to_csv.git
+  rails plugin install git://github.com/wenke/to-csv-rails.git
 
 == Note
 
