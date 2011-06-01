@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.name = 'to_csv-rails'
   s.version = version
   s.author = "LiangWenKe"
-  s.email = "liangwenke8@gmail.com"
-  s.homepage = "http://github.com/wenke/to_csv-rails"
+  s.email = "liangwenke.com@gmail.com"
+  s.homepage = "http://github.com/liangwenke/to_csv-rails"
   s.summary     = "Export data to csv on Rails"
   s.description = "This simple plugin gives you the ability to call to_csv to a collection of activerecords. The builder options are the same as to_json / to_xml, except for the :include."
   

@@ -41,8 +41,8 @@ This simple plugin gives you the ability to call to_csv to a collection of activ
   gem 'to_csv-rails'
   bundle install
 
-  git clone http://github.com/wenke/to_csv-rails.git
+  git clone http://github.com/liangwenke/to_csv-rails.git
 
 == Note
 
-Copyright (c) 2010 liangwenke8@gmail.com, released under the MIT license
+Copyright (c) 2010 liangwenke.com@gmail.com, released under the MIT license
