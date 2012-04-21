@@ -25,8 +25,9 @@ This simple plugin gives you the ability to call to_csv to a collection of activ
       
       respond_to do |format|
         format.csv { send_data(@posts.to_csv) }
+
         #format.csv {
-	#  filename = "posts-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv" 
+        #  filename = "posts-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv" 
         #  send_data(@posts.to_csv, :type => "text/csv; charset=utf-8; header=present", :filename => filename)
         #}
       end

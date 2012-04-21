@@ -1,3 +1,5 @@
+require "csv"
+
 class Array
   
   def to_csv(options = {})
