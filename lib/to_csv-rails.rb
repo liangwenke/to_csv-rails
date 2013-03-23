@@ -1,5 +1,5 @@
 class Array
-  
+
   def to_csv(options = {})
     return '' if self.empty?
 
@@ -11,17 +11,19 @@ class Array
     else
       columns = self.first.class.column_names.map(&:to_sym) - Array(options[:except]).map(&:to_sym)
     end
-    
+
     return '' if columns.empty?
-    
+
     data = []
     # header
-    data << columns.map(&:to_s).map(&:humanize).join(', ') if options[:header]
+    if options[:header]
+      data << options[:header_columns].blank? ? columns.map(&:to_s).map(&:humanize).join(',') : options[:header_columns]
+    end
 
     self.each do |obj|
-      data << columns.map{ |column| obj.send(column) }.join(', ')
+      data << columns.map{ |column| obj.send(column) }.join(',')
     end
     data.join("\n")
   end
-  
+
 end
