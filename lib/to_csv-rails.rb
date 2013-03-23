@@ -17,7 +17,8 @@ class Array
     data = []
     # header
     if options[:header]
-      data << options[:header_columns].blank? ? columns.map(&:to_s).map(&:humanize).join(',') : options[:header_columns]
+      header_columns = options[:header_columns].blank? ? columns.map(&:to_s).map(&:humanize) : options[:header_columns]
+      data << header_columns.join(',')
     end
 
     self.each do |obj|
