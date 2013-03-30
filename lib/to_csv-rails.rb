@@ -23,7 +23,15 @@ class Array
     end
 
     self.each do |obj|
-      data << columns.map { |column| "\'#{obj.send(column).to_s}\'" rescue '' }.join(',')
+      data << columns.map do |column|
+        begin
+          column_value = obj.send(column)
+          value.is_a?(String) ?  "\"#{column_value.to_s}\"" : column_value
+        end
+        rescue
+          ''
+        end
+      end.join(',')
     end
     data.join("\n")
   end
