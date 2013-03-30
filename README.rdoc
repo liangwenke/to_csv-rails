@@ -6,11 +6,11 @@ This simple plugin gives you the ability to call to_csv to a collection of activ
 == Usage
 
   @posts = Post.all
-  
+
   #
   #  default are export header and all fileds
   #
-  
+
   @posts.to_csv
   @posts.to_csv(:only => [:title, :body])
   @posts.to_csv(:except => [:id])
@@ -22,13 +22,13 @@ This simple plugin gives you the ability to call to_csv to a collection of activ
   class PostsController < ApplicationController
     def index
       @posts = Post.all
-      
+
       respond_to do |format|
         format.csv { send_data(@posts.to_csv) }
-        #format.csv {
-	#  filename = "posts-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv" 
-        #  send_data(@posts.to_csv, :type => "text/csv; charset=utf-8; header=present", :filename => filename)
-        #}
+        # format.csv {
+        #   filename = "posts-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv"
+        #   send_data(@posts.to_csv, :type => "text/csv; charset=utf-8; header=present", :filename => filename)
+        # }
       end
     end
   end
@@ -37,7 +37,7 @@ This simple plugin gives you the ability to call to_csv to a collection of activ
 == Install
 
   gem install to_csv-rails
-  
+
   gem 'to_csv-rails'
   bundle install
 
