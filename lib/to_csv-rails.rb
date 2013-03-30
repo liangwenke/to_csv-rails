@@ -25,14 +25,8 @@ class Array
     self.each do |obj|
       data << columns.map do |column|
         begin
-          # column_value = obj.send(column)
-          # value.is_a?(String) ?  "\"#{column_value.to_s}\"" : column_value
-          column_string = obj.send(column).to_s
-          column_string = column_string.gsub( /\"/, '""' )
-          if(column_string.include? ",")
-            column_string = "\"#{column_string}\""  
-          end
-          column_string
+          column_value = obj.send(column).to_s
+          column_value.include?(",") ? "\"#{column_value}\"" : column_value
         rescue
           ''
         end
