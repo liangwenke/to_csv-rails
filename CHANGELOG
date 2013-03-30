@@ -8,4 +8,4 @@
   Added custom header column names
 
 0.1.4
-  Fixed commas and " are not escaped
+  Fixed commas not escaped
