@@ -32,9 +32,8 @@ In your controller:
     end
   end
 
-  #
-  #  default are export header and all record fields
-  #
+
+== Advanced usage
 
   @posts.to_csv
   @posts.to_csv(:only => [:title, :body])
