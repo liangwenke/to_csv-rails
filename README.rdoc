@@ -8,7 +8,7 @@ This simple plugin gives you the ability to call to_csv to a collection of activ
 In your Gemfile:
 
   gem 'to_csv-rails'# Last officially released gem
-  # gem "meta_search", :git => "git://github.com/liangwenke/to_xls-rails.git" # Track git repo
+  # gem "meta_search", :git => "git://github.com/liangwenke/to_csv-rails.git" # Track git repo
 
 or, to install as a gem:
 
@@ -16,7 +16,7 @@ or, to install as a gem:
 
 or, to install as a plugin:
 
-  rails plugin install git://github.com/liangwenke/to_xls-rails.git
+  rails plugin install git://github.com/liangwenke/to_csv-rails.git
 
 In your controller:
 
