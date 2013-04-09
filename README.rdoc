@@ -1,4 +1,4 @@
-== to_csv on Rails
+== Export to CSV on Rails
 
 This simple plugin gives you the ability to call to_csv to a collection of activerecords. The builder options are the same as to_json / to_xml, except for the :include.
 
@@ -33,7 +33,7 @@ In your controller:
   end
 
   #
-  #  default are export header and all fileds
+  #  default are export header and all record fields
   #
 
   @posts.to_csv
