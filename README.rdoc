@@ -8,7 +8,7 @@ This simple plugin gives you the ability to call to_csv to a collection of activ
 In your Gemfile:
 
   gem 'to_csv-rails'# Last officially released gem
-  # gem "meta_search", :git => "git://github.com/liangwenke/to_csv-rails.git" # Track git repo
+  # gem "to_csv-rails", :git => "git://github.com/liangwenke/to_csv-rails.git" # Track git repo
 
 or, to install as a gem:
 
@@ -24,6 +24,7 @@ In your controller:
     @posts = Post.all
 
     respond_to do |format|
+      format.html
       format.csv { send_data(@posts.to_csv) }
       # format.csv {
       #   filename = "Posts-#{Time.now.strftime("%Y%m%d%H%M%S")}.csv"
@@ -31,6 +32,10 @@ In your controller:
       # }
     end
   end
+
+In your view:
+
+  <%= link_to 'CSV Download', posts_path(:format => :csv %>
 
 
 == Advanced usage
