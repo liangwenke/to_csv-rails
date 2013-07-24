@@ -2,18 +2,19 @@
 
 version = File.read(File.expand_path("../VERSION",__FILE__)).strip
 
-Gem::Specification.new do |s|
-  s.name = 'to_csv-rails'
-  s.version = version
-  s.author = "LiangWenKe"
-  s.email = "liangwenke.com@gmail.com"
-  s.homepage = "http://github.com/liangwenke/to_csv-rails"
-  s.summary     = "Export data to csv on Rails"
-  s.description = "This simple plugin gives you the ability to call to_csv to a collection of activerecords. The builder options are the same as to_json / to_xml, except for the :include."
-  
-  s.files        = Dir["lib/**/*", "[a-zA-Z]*", "init.rb"] - ["Gemfile.lock"]
-  s.require_path = "lib"
-
-  s.platform = Gem::Platform::RUBY
-  s.required_rubygems_version = ">= 1.3.4"
+Gem::Specification.new do |spec|
+  spec.name                      = 'to_csv-rails'
+  spec.version                   = version
+  spec.author                    = "Mike Liang"
+  spec.email                     = "liangwenke.com@gmail.com"
+  spec.homepage                  = "http://github.com/liangwenke/to_csv-rails"
+  spec.summary                   = "Export data to csv on Rails"
+  spec.description               = "This simple plugin gives you the ability to call to_csv to a collection of activerecords. The builder options are the same as to_json / to_xml, except for the :include."
+  spec
+  spec.files                     = Dir["lib/**/*", "[a-zA-Z]*", "init.rb"] - ["Gemfile.lock"]
+  spec.require_path              = "lib"
+  spec
+  spec.platform                  = Gem::Platform::RUBY
+  spec.required_rubygems_version = ">= 1.3.4"
+  spec.license                   = 'MIT'
 end
