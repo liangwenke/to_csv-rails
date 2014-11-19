@@ -26,7 +26,8 @@ class Array
       data << columns.map do |column|
         begin
           column_value = obj.send(column).to_s
-          column_value.include?(",") ? "\"#{column_value}\"" : column_value
+          needs_quotes = (column_value.include?(",") || column_value.include?("\n"))
+          needs_quotes ? "\"#{column_value}\"" : column_value
         rescue
           ''
         end
